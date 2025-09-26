@@ -11,29 +11,29 @@ undefined
 NaN (Not a Number)
 */
 
-const a = 0;
-let result = a ? 10 : -10;
-console.log(result);
+// const a = 0;
+// let result = a ? 10 : -10;
+// console.log(result);
 
-const falsy = 0;
-const truthy = 1;
-console.log(Boolean(truthy));
-console.log(Boolean(falsy));
+// const falsy = 0;
+// const truthy = 1;
+// console.log(Boolean(truthy)); //truesyかfaksyかを判定するにはBoolean関数
+// console.log(Boolean(falsy));
 
 // 論理積 (&&) について
 const resultA = "" && "foo";
 const resultB = 2 && 1 && 0 && 3;
 const resultC = "foo" && 4;
 
-// console.log(resultA);
-// console.log(resultB);
-// console.log(resultC);
+console.log(resultA); // ""がfalsyなので""が返る
+console.log(resultB); // 0がfalsyなので0が返る
+console.log(resultC); // falsyが無いので最後の値4が返る
 
 // 理論和 (||) について
 const resultD = "" || "foo";
-const resultE = 0 || 2 || 0;
+const resultE = 0 || 2 || 0; // truthyが見つかった時点で値が返る
 const resultF = "foo" || 4;
 
-console.log(resultD);
-console.log(resultE);
-console.log(resultF);
+console.log(resultD); // ""がfalsyなので"foo"が返る
+console.log(resultE); // 2がtruthyなので2が返る
+console.log(resultF); // "foo"がtruthyなので"foo"が返る
