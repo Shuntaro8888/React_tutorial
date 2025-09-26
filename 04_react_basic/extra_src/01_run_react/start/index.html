@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-   
-</head>
-<body>
-    
-</body>
+  <head>
+    <script src="/libs/react.development.js"></script> <!-- React本体 -->
+    <script src="/libs/react-dom.development.js"></script> <!-- ReactDOM -->
+    <script src="/libs/babel-standalone.js"></script> <!-- Babel -->
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="text/babel">
+        const appEl = document.querySelector('#app'); // マウントする要素を取得
+        const root = ReactDOM.createRoot(appEl); // Reactのrootを作成
+        root.render(<h1>こんにちは。React!</h1>); // JavaScriptの中にHTMLタグが入るJSXという記法
+
+        // ReactDom.render(<h1>こんにちは。React!</h1>, appEl); // 古い書き方
+    </script>
+  </body>
 </html>

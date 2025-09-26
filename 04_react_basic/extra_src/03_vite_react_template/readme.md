@@ -6,6 +6,7 @@
 [vitejs-plugin-react-swc](https://ja.vitejs.dev/plugins/#vitejs-plugin-react-swc)Babel の代わりに Verce 社が開発した swc を使用した次世代の Vite + React の組み合わせ
 
 ```bash
-npm create vite@latest my-react-app -- --template react
+npm create vite@latest my-react-app -- --template react (使ったもの)
 npm create vite@latest my-react-app -- --template react-swc
 ```
+

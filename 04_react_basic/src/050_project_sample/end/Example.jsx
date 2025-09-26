@@ -1,6 +1,6 @@
 const Example = () => {
   return (
-    <div>
+    <div className="component">
       <h3>endフォルダのコード</h3>
     </div>
   );

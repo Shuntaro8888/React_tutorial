@@ -10,7 +10,28 @@
     <script type="text/babel">
       const appEl = document.querySelector("#app");
       const root = ReactDOM.createRoot(appEl);
-      root.render(<h1>こんにちは</h1>);
+      // function Example() { // 先頭は大文字
+      //   return <h1>Hello components</h1>;
+      // }
+      const Example = () => <h1>Hello components!</h1>; // アロー関数でもOK
+
+      const Example2 = () => {
+        return <h1>Hello components!</h1>;
+      }; // returnを使う場合は{}で囲む
+
+      const Example3 = () => (
+        <h1>
+          Hello components!
+          <br />
+          Hello React!
+        </h1>
+      ); // 複数行の場合は()で囲む
+
+      const a = () => {
+        return "Hello components!";
+      }; // セミコロンを忘れずに
+      console.log(a()); // undefined
+      root.render(<Example />);
     </script>
   </body>
 </html>
