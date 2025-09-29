@@ -5,12 +5,18 @@
 
 import "./Child.css";
 
-const Child = () => {
-  return (
-    <div className="component">
-      <h3>Hello Component</h3>
-    </div>
-  );
+const Child = (props) => {
+  console.log(props);
+  // console.log(p);
+  // return (
+  //   // <div className={`component ${ c }`}>
+  //   //   <h3>Hello Component</h3>
+  //   //   <h3>{num}</h3>
+  //   //   <h3>{fn("props")}</h3>
+  //   //   <h3>{bool ? 'true' : 'false'}</h3>
+  //   //   <h3>{obj.name + obj}</h3>
+  //   // </div>
+  // );
 };
 
 export default Child;
