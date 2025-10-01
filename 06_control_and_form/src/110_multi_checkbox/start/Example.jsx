@@ -11,36 +11,27 @@ const Example = () => {
   const [sum, setSum] = useState(0);
 
   const handleChange = (e) => {
-    const newFruits = fruits.map((fruit) => {
-      const newFruit = { ...fruit };
-      if (newFruit.label === e.target.value) {
-        newFruit.checked = !fruit.checked;
+    const newFruits = fruits.map((fruit) => { // オブジェクトの配列(s)へ格納
+      const newFruit = { ...fruit }; // 新しいオブジェクトを定義し同じものを格納
+      if (newFruit.label === e.target.value) { // クリックした物を
+        newFruit.checked = !fruit.checked; // ON/OFF
       }
-
-      return newFruit;
+      return newFruit; // checkedプロパティだけ更新したものを返す
     });
 
-    setFruits(newFruits);
+    setFruits(newFruits); //新しいオブジェクトの配列(s)で更新
+
     // forEachバージョン
-    // let sumVal = 0;
-    // newFruits.forEach(fruit => {
-    //   if(fruit.checked) {
-    //     sumVal = sumVal + fruit.value;
-    //   }
-    // });
+    let sumVal = 0;
+    newFruits.forEach(newfruit => {
+      if(newfruit.checked) {
+        sumVal = sumVal + newfruit.value;
+      }
+    });
 
-    // filter + forEachバージョン
-    // let sumVal = 0;
-    // newFruits
-    //   .filter((fruit) => fruit.checked)
-    //   .forEach((fruit) => (sumVal = sumVal + fruit.value));
-
-    // filter + reduceバージョン
-    let sumVal = newFruits
-      .filter((fruit) => fruit.checked)
-      .reduce((sumVal, fruit) => sumVal + fruit.value, 0);
     setSum(sumVal);
   };
+
   return (
     <div>
       {fruits.map((fruit) => {
