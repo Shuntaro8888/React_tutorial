@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const Example = () => {
   const inputFact = () => ({
-    key: Math.floor(Math.random() * 1e3),
+    key: Math.floor(Math.random() * 1e3), //ユニークではないが確率は低い
     value: <input />,
   });
 

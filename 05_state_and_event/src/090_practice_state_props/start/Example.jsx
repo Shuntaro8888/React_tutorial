@@ -10,6 +10,7 @@ const Example = () => {
   );
 };
 
+// 2つのコンポーネントでstateが保持されている 
 const CountResult = ({title, count}) => {
   return (
     <h3>
