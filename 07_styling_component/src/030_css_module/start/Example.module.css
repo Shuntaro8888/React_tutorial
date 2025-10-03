@@ -1,0 +1,32 @@
+.btn {
+    margin: auto;
+    border-radius: 9999px;
+    border: none;
+    display: block;
+    width: 120px;
+    height: 60px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: red;
+}
+
+.btn:active {
+    background-color: purple;
+}
+
+.selected {
+    background-color: pink;
+}
+
+/* button { コンポーネント外にも影響を及ぼすため使わない
+    background-color: green;
+} */
+
+@media (max-width: 600px) {
+    .btn {
+        border-radius: 0;
+    }
+}
