@@ -10,7 +10,7 @@ const Example = () => {
         height: 60,
         display: "block",
         fontWeight: "bold",
-        "border-radius": 9999, 
+        borderRadius: 9999, 
         cursor: "pointer", //hoverしたときにポインターとなる
         border: "none",
         margin: "auto",

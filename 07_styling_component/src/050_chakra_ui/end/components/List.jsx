@@ -1,4 +1,10 @@
-import { VStack, StackDivider, HStack, IconButton, Text } from "@chakra-ui/react";
+import {
+  VStack,
+  StackDivider,
+  HStack,
+  IconButton,
+  Text,
+} from "@chakra-ui/react";
 
 // POINT react-iconsからアイコンをインポート
 import { VscCheck } from "react-icons/vsc";
