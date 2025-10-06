@@ -1,3 +1,4 @@
+/*クラス名がApp-startの中のcontainerの中のmodal要素に適用*/
 .App-start .container .modal {
   position: absolute;
   top: 0;
