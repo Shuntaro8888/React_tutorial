@@ -3,13 +3,13 @@ import { useState, useRef, forwardRef, useImperativeHandle } from "react";
 const Video = forwardRef(({ path }, ref) => {
   const videoRef = useRef();
 
-  useImperativeHandle(ref, () => ({
+  useImperativeHandle(ref, () => ({ //refに対してここで定義したメソッドのみ実行可となる
     play() {
       videoRef.current.play();
     },
     stop() {
       videoRef.current.pause();
-    },
+    }
   }));
 
   return (
@@ -22,11 +22,11 @@ const Video = forwardRef(({ path }, ref) => {
 const Example = () => {
   const [playing, setPlaying] = useState(false);
 
-  const ref = useRef();
+  const ref = useRef(); //refオブジェクトの作成
 
   return (
     <div>
-      <Video ref={ref} path="./sample.mp4" />
+      <Video ref={ref} path="./sample.mp4" /> {/*JSXのref属性に渡す*/}
       <button
         onClick={() => {
           if (playing) {
