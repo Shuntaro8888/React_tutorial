@@ -9,11 +9,14 @@ const Example = () => {
 
   const val1 = 3, val2 = 9;
   let result;
+
   const add = (val1) => {
-    console.log(val1);
-    result = val1 + val2;
+    console.log(val1); // 関数外に影響を及ぼしている
+    result = val1 + val2; //外部スコープの値(val2)を参照している、関数外に影響を及ぼしている
     return val1 + val2;
   }
+
+
 
   return (
     <>
