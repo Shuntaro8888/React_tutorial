@@ -31,12 +31,14 @@ const Example = () => {
       return prev + step
     });
   };
+  
   const rcountUp = () => {
     dispatch({ type: "+", step: 2 });
   };
   const rcountDown = () => {
     dispatch({ type: "-", step: 3 });
   };
+
   return (
     <>
       <div>

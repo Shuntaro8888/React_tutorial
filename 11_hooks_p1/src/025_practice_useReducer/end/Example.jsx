@@ -9,7 +9,7 @@ const reducer = (state, { type, payload }) => {
       const { name, value } = payload;
       return { ...state, [name]: value };
     }
-    // inputのvalueの値がJavaScriptに渡される際に文字列になるため数値に変換
+    // Number:inputのvalueの値がJavaScriptに渡される際に文字列になるため数値に変換
     case "add": {
       return { ...state, result: Number(state.a) + Number(state.b) };
     }
@@ -36,15 +36,17 @@ const Example = () => {
 
   const [state, dispatch] = useReducer(reducer, initState);
 
-  const calculate = (e) => {
+  const calculate = (e) => { //listのoptionが変わるたびにstateのresultプロパティを更新
     dispatch({ type: e.target.value });
   };
-  const numChangeHandler = (e) => {
+
+  const numChangeHandler = (e) => { //inputのvalueが変わるたびにstateのa,bプロパティを更新
     dispatch({
       type: "change",
-      payload: { name: e.target.name, value: e.target.value },
+      payload: { name: e.target.name, value: e.target.value }, //payloadの意味：中身のデータ, name:a or b, value:値
     });
   };
+
   return (
     <>
       <div>
@@ -65,8 +67,8 @@ const Example = () => {
           onChange={numChangeHandler}
         />
       </div>
-      <select value={state.type} name="type" onChange={calculate}>
-        {CALC_OPTIONS.map((type) => (
+      <select name="type" onChange={calculate}>
+        {CALC_OPTIONS.map((type) => ( //ここで選んだoptionのvalueがe.target.valueとしてcalculateで渡される
           <option key={type} value={type}>
             {type}
           </option>
