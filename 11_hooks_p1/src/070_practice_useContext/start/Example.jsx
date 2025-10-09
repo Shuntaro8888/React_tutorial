@@ -40,6 +40,7 @@ const Example = () => {
   const numChangeHandler = (e) => {
     dispatch({type: 'change', payload: {name: e.target.name, value: e.target.value}});
   };
+  
   return (
     /* 完成系のJSX */
     // <CalcProvider>
