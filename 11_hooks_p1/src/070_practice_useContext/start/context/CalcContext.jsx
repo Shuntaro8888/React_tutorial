@@ -1,7 +1,7 @@
 //値を保持する、計算を実施する
 import { createContext, useContext, useReducer } from "react";
 
-const CalcContext = createContext();
+const CalcContext = createContext(); //contextを作成
 const CalcDispatchContext = createContext();
 
 export const useCalc = () => {
@@ -12,6 +12,7 @@ export const useCalcDispatch = () => {
   return useContext(CalcDispatchContext);
 }
 
+//stateの更新関数
 const reducer = (state, { type, payload }) => {
   switch (type) {
     case "change": {
@@ -33,16 +34,18 @@ const reducer = (state, { type, payload }) => {
     default:
       throw new Error("operator is invalid");
   }
+  
 };
 
 export const CalcProvider = ({ children }) => {
-  const initState = {
+
+  const initState = { //初期値
     a: 1,
     b: 2,
     result: 3,
   };
 
-  const [state, dispatch] = useReducer(reducer, initState);
+  const [state, dispatch] = useReducer(reducer, initState); //calcステートを管理
 
   return (
     <CalcContext.Provider value={state}>
@@ -51,4 +54,5 @@ export const CalcProvider = ({ children }) => {
         </CalcDispatchContext.Provider>
     </CalcContext.Provider>
   );
+
 };
